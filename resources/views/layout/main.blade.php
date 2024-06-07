@@ -52,9 +52,8 @@
 
     @yield('header')
 
-    <div class="flex-grow">
+    
         @yield('content')
-    </div>
 
     @yield('footer')
     

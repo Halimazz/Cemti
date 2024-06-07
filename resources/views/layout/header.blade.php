@@ -5,6 +5,7 @@
     }
     .navbar-shrink nav {
         height: 50px;
+        opacity: 0.8;
     }
     .navbar-shrink h3 {
         font-size: 1.5rem; /* Adjust font size */
@@ -13,10 +14,11 @@
         font-size: 1rem; /* Adjust font size */
     }
     .navbar-shrink img {
-        height: 100px; /* Adjust image size */
+        height: 90px; /* Adjust image size */
     }
     #navbar, #navbar nav, #navbar h3, #navbar p, #navbar img {
         transition: all 0.3s ease-in-out;
+        /* opacity: 0.8; */
     }
 
     /* Basic styling */
@@ -77,17 +79,20 @@
         left: 100%;
         top: 0;
     }
+    .cemti_logo{
+        height: 202.5px;
+    }
 </style>
 
 
 
 
 <header class="fixed top-0 w-full transition-all duration-300 ease-in-out" id="navbar">
-    <nav class="bg-gray-400 opacity-80 w-full h-28 py-2 px-4 flex items-center justify-between grow-0">
-        <div class="flex flex-row items-center py-2 grow w-full max-w-11xl ml-2">
+    <nav class="bg-red-800 w-full h-28 py-2 px-4 flex items-center justify-between grow-0">
+        <div class="flex flex-row items-center py-2 grow w-full max-w-11xl  ml-2">
             <a href="{{ url('/') }}">
-                <div class="flex flex-col items-start justify-start">
-                    <img src="{{ url('') }}/assets/img/landing-page/cemti.webp" alt="" class="h-52 transition-all duration-300 ease-in-out">
+                <div class="flex flex-col items-start justify-start h">
+                    <img src="{{ url('') }}/assets/img/landing-page/cemti_m.webp" alt="" class="cemti_logo transition-all duration-300 ease-in-out">
                 </div>
             </a>
         </div>
@@ -96,16 +101,13 @@
                 <p class="font-inter text-lg ml-8 {{ $page == 'Home' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Home</p>
             </a>
             <li id="menu-item-73544" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
-                <a title="About Us" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'About us' ? 'text-gray-300' : 'text-red-900 hover:text-gray-300 duration-200' }}">About Us <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
+                <a title="About Us" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'About us' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">About Us <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
                 <ul role="menu" class="drop-menu">
-                    <li id="menu-item-81961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81961">
-                        <a title="Messages from the board" href="-the-board/">Messages from the board<i class="fa fa-angle-right fa-dropdown"></i></a>
-                    </li>
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
-                        <a title="Vision" href="#">Vision</a>
+                        <a title="Vision" href="{{ url('vision') }}">Vision</a>
                     </li>
                     <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
-                        <a title="Strategy" href="#">Strategy</a>
+                        <a title="Strategy" href="{{ url('strategy') }}">Strategy</a>
                     </li>
                     <li id="menu-item-81984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81984">
                         <a title="Target" href="#">Target</a>
