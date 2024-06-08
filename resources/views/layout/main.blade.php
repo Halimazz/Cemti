@@ -48,7 +48,7 @@
     @yield('css-library')
     @yield('css-custom')
 </head>
-<body class="skin-black h-screen relative flex flex-col">
+<body class="bg-blue-200 h-screen relative flex flex-col">
 
     @yield('header')
 

@@ -5,7 +5,7 @@
     }
     .navbar-shrink nav {
         height: 50px;
-        opacity: 0.8;
+        
     }
     .navbar-shrink h3 {
         font-size: 1.5rem; /* Adjust font size */
@@ -80,7 +80,12 @@
         top: 0;
     }
     .cemti_logo{
-        height: 202.5px;
+        height: 165.5px;
+        /* width: px; */
+        
+    }
+    .div_logo{
+        /* width: 30px; */
     }
 </style>
 
@@ -88,15 +93,15 @@
 
 
 <header class="fixed top-0 w-full transition-all duration-300 ease-in-out" id="navbar">
-    <nav class="bg-red-800 w-full h-28 py-2 px-4 flex items-center justify-between grow-0">
-        <div class="flex flex-row items-center py-2 grow w-full max-w-11xl  ml-2">
-            <a href="{{ url('/') }}">
-                <div class="flex flex-col items-start justify-start h">
-                    <img src="{{ url('') }}/assets/img/landing-page/cemti_m.webp" alt="" class="cemti_logo transition-all duration-300 ease-in-out">
+    <nav class="bg-red-800 w-full h-28 py-2  flex items-center justify-start grow-0">
+        <div class="flex items-start py-2 div_logo grow-0">
+            <a href="{{ url('/') }} ">
+                <div class="flex justify-item-start w-96">
+                    <img src="{{ url('') }}/assets/img/landing-page/cemti_6.webp" alt="" class="cemti_logo  transition-all duration-300 ease-in-out">
                 </div>
             </a>
         </div>
-        <div id="brandName" class="flex flex-row justify-end">
+        <div id="brandName" class="flex flex-row  justify-item-end pl-40">
             <a href="{{ url('home') }}">
                 <p class="font-inter text-lg ml-8 {{ $page == 'Home' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Home</p>
             </a>
@@ -110,10 +115,10 @@
                         <a title="Strategy" href="{{ url('strategy') }}">Strategy</a>
                     </li>
                     <li id="menu-item-81984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81984">
-                        <a title="Target" href="#">Target</a>
+                        <a title="Target" href="{{ url('target') }}">Target</a>
                     </li>
                     <li id="menu-item-81980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81980">
-                        <a title="Organization" href="#">Organization</a>
+                        <a title="Organization" href="{{ url('organization') }}">Organization</a>
                     </li>
                 </ul>
             </li>
@@ -123,15 +128,15 @@
                     <li id="menu-item-81961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81961">
                         <a title="Medical Instrumental" href="-the-board/">Medical Instrumental<i class="fa fa-angle-right fa-dropdown"></i></a>
                         <ul role="menu" class="drop-menu">
-                            <li><a title="Capstone" href="-the-board/">Capstone</a></li>
-                            <li><a title="Capstone" href="-the-board/">Reaserch Drant</a></li>
+                            <li><a title="Capstone" href="{{ url('capstone') }}">Capstone</a></li>
+                            <li><a title="Capstone" href="{{ url('research-drant') }}">Reaserch Drant</a></li>
                         </ul>
                     </li>
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
-                        <a title="Vision" href="#">Medical Rehabilitation</a>
+                        <a title="Medical Rehabilitation" href="{{ url('cluster-medical-rehabilitation') }}">Medical Rehabilitation</a>
                     </li>
                     <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
-                        <a title="Strategy" href="#">Medical Image Processing</a>
+                        <a title="Medical Image Processing" href="{{ url('cluster-medical-image-processing') }}">Medical Image Processing</a>
                     </li>
                 </ul>
             </li>
@@ -173,9 +178,7 @@
             <a href="{{ url('news') }}">
                 <p class="font-inter text-lg ml-8 {{ $page == 'News' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">News</p>
             </a>
-            <a href="{{ url('cluster') }}">
-                <p class="font-inter text-lg ml-8 {{ $page == 'How' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Cluster</p>
-            </a>
+            
         </div>
         
         <a href="{{ url('login') }}" class="ml-8">

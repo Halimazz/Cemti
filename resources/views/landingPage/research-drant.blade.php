@@ -19,7 +19,7 @@
 <div class="w-full max-w-11xl mx-auto">
     <article id="lintangDef" class="my-56">
         <div class="flex flex-row h-auto justify-between gap-12">
-            <h1 class="">ini halaman organization</h1>
+            <h1 class="">ini halaman research drant</h1>
             <div class="flex flex-col justify-start grow">
                 <div class="flex flex-col">
                     <h1 class="text-10xl font-inter font-extrabold">CEMTI</h1>

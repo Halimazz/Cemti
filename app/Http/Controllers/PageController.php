@@ -47,32 +47,90 @@ class PageController extends Controller
 
     public function organization()
     {
-        return view('organization'); // Change 'organization' to the name of your view
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-organization',
+        ];
+
+        return view('landingPage/organization', $data); // Change 'organization' to the name of your view
     }
 
     public function target()
     {
-        return view('target'); // Change 'target' to the name of your view
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/target', $data); // Change 'target' to the name of your view
     }
 
     public function clusterMedicalRehabilitation()
     {
-        return view('cluster-medical-rehabilitation'); // Change to the name of your view
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/clus-med-rehab', $data); // Change to the name of your view
     }
 
     public function clusterMedicalImageProcessing()
     {
-        return view('cluster-medical-image-processing'); // Change to the name of your view
+        
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/clus-med-imgpro', $data); // Change to the name of your view
     }
 
-    public function clusterMedicalInstrumentalCapstone()
+    public function capstone()
     {
-        return view('cluster-medical-instrumental-capstone'); // Change to the name of your view
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/capstone', $data); // Change to the name of your view
     }
 
-    public function clusterMedicalInstrumentalResearchDrant()
+    public function researchDrant()
     {
-        return view('cluster-medical-instrumental-research-drant'); // Change to the name of your view
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/research-drant', $data); // Change to the name of your view
+    }
+    public function facilities()
+    {
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/facilities', $data); // Change to the name of your view
+    }
+    public function event()
+    {
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/event', $data); // Change to the name of your view
+    }
+    public function news()
+    {
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'about-us-target',
+        ];
+
+        return view('landingPage/news', $data); // Change to the name of your view
     }
 
     
