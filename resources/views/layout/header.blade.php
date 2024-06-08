@@ -165,7 +165,7 @@
                 <a title="Products" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'Products' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Products <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
                 <ul role="menu" class="drop-menu">
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
-                        <a title="Vision" href="#">Capstone</a>
+                        <a title="Vision" href="{{ url('capstone') }}">Capstone</a>
                     </li>
                     <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
                         <a title="Strategy" href="#">Commercil</a>
