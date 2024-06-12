@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\PageController;
 
 
@@ -24,7 +27,33 @@ Route::get('/servieces-education', [PageController::class, 'serviecesEducation']
 Route::get('/servieces-product', [PageController::class, 'serviecesProduct']);
 Route::get('/servieces-sales', [PageController::class, 'serviecesSales']);
 Route::get('/servieces-consulting', [PageController::class, 'serviecesConsulting']);
-Route::get('/products-commercil', [PageController::class, 'productsConsulting']);
+Route::get('/products-commercil', [PageController::class, 'productsCommercil']);
 Route::get('/event', [PageController::class, 'event']);
 Route::get('/news', [PageController::class, 'news']);
+//login
+Route::get('login', [AuthController::class, 'login']);
+Route::post('loginProses', [AuthController:: class, 'loginProses']);
+//logout
+Route::get('logout', [AuthController::class,'logout']);
+
+//login_auth
+Route::middleware(['login'])->group(function (){
+    Route::middleware(['super_admin'])->group(function (){
+        Route::resource('/dashboard-post', DashboardPostController::class);
+        Route::resource('/dashboard-account', AccountController::class);
+
+
+    });
+    Route::middleware(['admin'])->group(function (){
+        
+    });
+    Route::middleware(['mitra'])->group(function (){
+        
+    });
+
+
+
+
+
+});
 

@@ -132,6 +132,46 @@ class PageController extends Controller
 
         return view('landingPage/news', $data); // Change to the name of your view
     }
+    public function productsCommercil(){
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'products-commercil',
+        ];
+
+        return view('landingPage/pro-commercil', $data);
+    }
+    public function serviecesEducation(){
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'products-commercil',
+        ];
+
+        return view('landingPage/serviece-edu', $data);
+    }
+    public function serviecesProduct(){
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'products-commercil',
+        ];
+
+        return view('landingPage/serviece-product', $data);
+    }
+    public function serviecesSales(){
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'products-commercil',
+        ];
+
+        return view('landingPage/serviece-sales', $data);
+    }
+    public function serviecesConsulting(){
+        $data = [
+            'title'         => $this->title,
+            'page'          => 'products-commercil',
+        ];
+
+        return view('landingPage/serviece-consulting', $data);
+    }
 
     
 }

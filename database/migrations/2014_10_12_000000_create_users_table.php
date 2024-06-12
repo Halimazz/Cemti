@@ -13,12 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('username')->nullable(false);
+            $table->string('password')->nullable(false);
+            $table->string('sandi')->nullable(false);
+            $table->string('status')->nullable(false);
+            $table->unsignedBigInteger('idRole')->nullable(false);
+            $table->dateTime('lastLogin')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
+            // Definisi kunci asing untuk kolom 'idRole'
+            $table->foreign('idRole')->references('id')->on('user_roles');
         });
     }
 

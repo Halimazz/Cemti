@@ -16,7 +16,10 @@
     .navbar-shrink img {
         height: 90px; /* Adjust image size */
     }
-    #navbar, #navbar nav, #navbar h3, #navbar p, #navbar img {
+    .navbar-shrink #profile {
+        height: 30px; /* Adjust image size */
+    }
+    #navbar, #navbar nav, #navbar h3, #navbar p, #navbar img, #profile  {
         transition: all 0.3s ease-in-out;
         /* opacity: 0.8; */
     }
@@ -96,12 +99,12 @@
     <nav class="bg-red-800 w-full h-28 py-2  flex items-center justify-start grow-0">
         <div class="flex items-start py-2 div_logo grow-0">
             <a href="{{ url('/') }} ">
-                <div class="flex justify-item-start w-96">
+                <div class="flex justify-item-start w-100">
                     <img src="{{ url('') }}/assets/img/landing-page/cemti_6.webp" alt="" class="cemti_logo  transition-all duration-300 ease-in-out">
                 </div>
             </a>
         </div>
-        <div id="brandName" class="flex flex-row  justify-item-end pl-40">
+        <div id="brandName" class="flex flex-row  justify-item-end pl-10">
             <a href="{{ url('home') }}">
                 <p class="font-inter text-lg ml-8 {{ $page == 'Home' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Home</p>
             </a>
@@ -148,16 +151,16 @@
                 <a title="Servieces" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'Servieces' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Servieces <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
                 <ul role="menu" class="drop-menu">
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
-                        <a title="Education/Training" href="#">Education/Training</a>
+                        <a title="Education/Training" href="{{ url('servieces-education') }}">Education/Training</a>
                     </li>
                     <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
-                        <a title="Product Development" href="#">Product Development</a>
+                        <a title="Product Development" href="{{ url('servieces-product') }}">Product Development</a>
                     </li>
                     <li id="menu-item-81984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81984">
-                        <a title="Sales" href="#">Sales</a>
+                        <a title="Sales" href="{{ url('servieces-sales') }}">Sales</a>
                     </li>
                     <li id="menu-item-81980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81980">
-                        <a title="Consulting" href="#">Consulting</a>
+                        <a title="Consulting" href="{{ url('servieces-consulting') }}">Consulting</a>
                     </li>
                 </ul>
             </li>
@@ -168,7 +171,7 @@
                         <a title="Vision" href="{{ url('capstone') }}">Capstone</a>
                     </li>
                     <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
-                        <a title="Strategy" href="#">Commercil</a>
+                        <a title="Commercil" href="{{ url('products-commercil') }}">Commercil</a>
                     </li>
                 </ul>
             </li>
@@ -178,16 +181,40 @@
             <a href="{{ url('news') }}">
                 <p class="font-inter text-lg ml-8 {{ $page == 'News' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">News</p>
             </a>
+            @if (session()->get('isLogin') == 1)
+            <li id="menu-item-73544" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
+                <a title="Servieces" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'Servieces' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Add And Edit <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
+                <ul role="menu" class="drop-menu">
+                    <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
+                        <a title="Education/Training" href="{{ route('dashboard-post.index') }}">Image</a>
+                    </li>
+                    <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
+                        <a title="Product Development" href="{{ route('dashboard-account.index') }}">Account</a>
+                    </li>
+                </ul>
+            </li>
+            @endif
+            {{-- <img class="rounded-md profile" id="profile" src="{{ asset('assets/img/profile.jpg') }}" alt=""> --}}
+
             
         </div>
-        
-        <a href="{{ url('login') }}" class="ml-8">
-            <div id="profileInterface" class="mr-2 flex flex-col items-center group cursor-pointer relative">
-                <div class="flex flex-row items-center">
-                    <i class="fa-regular fa-user fa-2xl text-white group-hover:text-gray-300 duration-200"></i>
+        <div class="flex items-center space-x-3 ml-4 " style="background-color: rgb(88, 14, 14); padding: 10px; border-radius: 8px;">
+            <a href="{{ url('login') }}" class="">
+                <div id="profileInterface" class="mr-2 flex flex-col items-center group cursor-pointer relative">
+                    <div class="flex flex-row items-center">
+                        <i class="fa-regular fa-user fa-2xl  text-white group-hover:text-gray-300 duration-200"></i>
+                    </div>
                 </div>
+            </a>
+            @if (session()->get('isLogin') == 1)
+            <div>
+                <span class="text-white">{{ session()->get('username') }}</span>
+                <p class="mb-0 font-roboto text-white">Super Admin <i class="fa fa-angle-down ml-1"></i></p>
             </div>
-        </a>
+            @endif
+
+        </div>        
+        
     </nav>
 </header>
 

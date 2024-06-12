@@ -48,7 +48,7 @@
     @yield('css-library')
     @yield('css-custom')
 </head>
-<body class="bg-blue-200 h-screen relative flex flex-col">
+<body class="bg-blue-100 h-screen relative flex flex-col">
 
     @yield('header')
 
@@ -67,6 +67,19 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+    </script>
+
+    {{-- script auto close for alert --}}
+    <script>
+        // Function to close the alert modal
+        function closeAlert() {
+            document.getElementById('alertModal').style.display = 'none';
+        }
+    
+        // Automatically close the alert modal after 2 seconds
+        setTimeout(() => {
+            closeAlert();
+        }, 2000);
     </script>
 
     <!-- Bootstrap JS -->
