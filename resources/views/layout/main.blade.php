@@ -13,7 +13,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/ba0903e616.js" crossorigin="anonymous"></script>
@@ -41,6 +41,8 @@
 
     <!-- MQTT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
+    <!-- Aos js -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Tailwind CSS (Optional, if using Vite) -->
     @vite('resources/css/app.css')
@@ -48,7 +50,7 @@
     @yield('css-library')
     @yield('css-custom')
 </head>
-<body class="bg-blue-100 h-screen relative flex flex-col">
+<body class=" h-screen relative flex flex-col">
 
     @yield('header')
 
@@ -82,10 +84,24 @@
         }, 2000);
     </script>
 
+    <!-- Memuat JavaScript AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Inisialisasi AOS -->
+<script>
+    AOS.init({
+        duration: 1000,  // Durasi animasi
+        once: true,     // Animasi hanya berjalan satu kali saat pertama kali muncul
+        easing: 'ease-in-out', // Jenis easing yang digunakan
+        offset: 100      // Offset (jarak) dari elemen, dalam px
+    });
+</script>
+
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     @yield('js-library')
     @yield('js-custom')

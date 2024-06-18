@@ -3,26 +3,47 @@
     .navbar-shrink {
         height: 50px;
     }
+
     .navbar-shrink nav {
         height: 50px;
-        
     }
+
     .navbar-shrink h3 {
         font-size: 1.5rem; /* Adjust font size */
     }
+
     .navbar-shrink p {
         font-size: 1rem; /* Adjust font size */
     }
+
     .navbar-shrink img {
         height: 90px; /* Adjust image size */
     }
+
     .navbar-shrink #profile {
-        height: 30px; /* Adjust image size */
+        height: 38px; /* Adjust image size */
     }
-    #navbar, #navbar nav, #navbar h3, #navbar p, #navbar img, #profile  {
+
+    #navbar, #navbar nav, #navbar h3, #navbar p, #navbar img, #profile {
         transition: all 0.3s ease-in-out;
-        /* opacity: 0.8; */
     }
+
+    .list-shrink {
+        margin-top: 0px;
+        transition: all 0.3s ease-in-out;
+         /* Set margin-top to 20px */
+    }
+
+    .list-off{
+        margin-top: 5px; /* Set margin-top to 20px */
+    }
+
+    .list {
+        transition: all 0.3s ease-in-out;
+    }
+
+
+    
 
     /* Basic styling */
     ul {
@@ -82,34 +103,36 @@
         left: 100%;
         top: 0;
     }
-    .cemti_logo{
+    .cemti_logo {
         height: 165.5px;
-        /* width: px; */
-        
     }
-    .div_logo{
-        /* width: 30px; */
+    .div_logo {
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
     }
 </style>
 
 
 
 
-<header class="fixed top-0 w-full transition-all duration-300 ease-in-out" id="navbar">
-    <nav class="bg-red-800 w-full h-28 py-2  flex items-center justify-start grow-0">
-        <div class="flex items-start py-2 div_logo grow-0">
-            <a href="{{ url('/') }} ">
+<header class="fixed top-0 w-full transition-all duration-300 ease-in-out z-10" id="navbar">
+    <nav class="bg-red-800 w-full h-28  flex items-center justify-start grow-0">
+        <div class="flex items-start div_logo grow-0">
+            <a href="{{ url('/') }}">
                 <div class="flex justify-item-start w-100">
-                    <img src="{{ url('') }}/assets/img/landing-page/cemti_6.webp" alt="" class="cemti_logo  transition-all duration-300 ease-in-out">
+                    <img src="{{ url('') }}/assets/img/landing-page/cemti_6.webp" alt="" class="cemti_logo transition-all duration-300 ease-in-out">
                 </div>
             </a>
         </div>
-        <div id="brandName" class="flex flex-row  justify-item-end pl-10">
+        <div id="brandName" class="flex flex-row justify-item-end">
             <a href="{{ url('home') }}">
                 <p class="font-inter text-lg ml-8 {{ $page == 'Home' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Home</p>
             </a>
-            <li id="menu-item-73544" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
-                <a title="About Us" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'About us' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">About Us <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
+            <li id="menu-item-73544" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
+                <a title="About Us" href="#" data-toggle="dropdown" data-type="title">
+                    <p class="font-inter text-lg ml-8 {{ $page == 'About us' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">About Us <i class="fa fa-angle-down fa-dropdown"></i></p>
+                </a>
                 <ul role="menu" class="drop-menu">
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
                         <a title="Vision" href="{{ url('vision') }}">Vision</a>
@@ -125,8 +148,10 @@
                     </li>
                 </ul>
             </li>
-            <li id="menu-item-73544" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
-                <a title="Cluster" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'Cluster' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Cluster <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
+            <li id="menu-item-73544" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
+                <a title="Cluster" href="#" data-toggle="dropdown" data-type="title">
+                    <p class="font-inter text-lg ml-8 {{ $page == 'Cluster' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Cluster <i class="fa fa-angle-down fa-dropdown"></i></p>
+                </a>
                 <ul role="menu" class="drop-menu">
                     <li id="menu-item-81961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81961">
                         <a title="Medical Instrumental" href="-the-board/">Medical Instrumental<i class="fa fa-angle-right fa-dropdown"></i></a>
@@ -147,8 +172,10 @@
                 <p class="font-inter text-lg ml-8 {{ $page == 'Facilities' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Facilities</p>
             </a>
             
-            <li id="menu-item-73544" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
-                <a title="Servieces" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'Servieces' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Servieces <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
+            <li id="menu-item-73544" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
+                <a title="Servieces" href="#" data-toggle="dropdown" data-type="title">
+                    <p class="font-inter text-lg ml-8 {{ $page == 'Servieces' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Services <i class="fa fa-angle-down fa-dropdown"></i></p>
+                </a>
                 <ul role="menu" class="drop-menu">
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
                         <a title="Education/Training" href="{{ url('servieces-education') }}">Education/Training</a>
@@ -164,8 +191,10 @@
                     </li>
                 </ul>
             </li>
-            <li id="menu-item-73544" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
-                <a title="Products" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'Products' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Products <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
+            <li id="menu-item-73544" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
+                <a title="Products" href="#" data-toggle="dropdown" data-type="title">
+                    <p class="font-inter text-lg ml-8 {{ $page == 'Products' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Products <i class="fa fa-angle-down fa-dropdown"></i></p>
+                </a>
                 <ul role="menu" class="drop-menu">
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
                         <a title="Vision" href="{{ url('capstone') }}">Capstone</a>
@@ -181,9 +210,11 @@
             <a href="{{ url('news') }}">
                 <p class="font-inter text-lg ml-8 {{ $page == 'News' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">News</p>
             </a>
-            @if (session()->get('isLogin') == 1)
-            <li id="menu-item-73544" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
-                <a title="Servieces" href="#" data-toggle="dropdown" data-type="title"><p class="font-inter text-lg ml-8  {{ $page == 'Servieces' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Add And Edit <i class=" fa fa-angle-down fa-dropdown"></i></p> </a>
+            {{-- @if (session()->get('isLogin') == 1)
+            <li id="menu-item-73544" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-32" style="list-style-type: none">
+                <a title="Servieces" href="#" data-toggle="dropdown" data-type="title">
+                    <p class="font-inter text-lg ml-8 {{ $page == 'Servieces' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">Add <i class="fa fa-angle-down fa-dropdown"></i></p>
+                </a>
                 <ul role="menu" class="drop-menu">
                     <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
                         <a title="Education/Training" href="{{ route('dashboard-post.index') }}">Image</a>
@@ -193,40 +224,80 @@
                     </li>
                 </ul>
             </li>
-            @endif
-            {{-- <img class="rounded-md profile" id="profile" src="{{ asset('assets/img/profile.jpg') }}" alt=""> --}}
-
-            
+            @endif --}}
         </div>
-        <div class="flex items-center space-x-3 ml-4 " style="background-color: rgb(88, 14, 14); padding: 10px; border-radius: 8px;">
-            <a href="{{ url('login') }}" class="">
-                <div id="profileInterface" class="mr-2 flex flex-col items-center group cursor-pointer relative">
+        <div id="profile" class="flex items-center space-x-2 bg-red-500 p-3 ml-9 rounded-lg">
+            <a href="{{ url('login') }}">
+                <div id="profileInterface" class=" flex flex-col items-center group cursor-pointer relative">
                     <div class="flex flex-row items-center">
-                        <i class="fa-regular fa-user fa-2xl  text-white group-hover:text-gray-300 duration-200"></i>
+                        <i class="fa-regular fa-user fa-2xl text-white group-hover:text-gray-300 duration-200"></i>
                     </div>
                 </div>
             </a>
             @if (session()->get('isLogin') == 1)
-            <div>
-                <span class="text-white">{{ session()->get('username') }}</span>
-                <p class="mb-0 font-roboto text-white">Super Admin <i class="fa fa-angle-down ml-1"></i></p>
-            </div>
-            @endif
-
-        </div>        
+            <div class="dropdown relative">
+                <li id="menu-item-73544" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-73544 dropdown menu-item-link w-38" style="list-style-type: none">
+                    <p class="font-inter text-lg ml-3 {{ $page == 'Servieces' ? 'text-gray-300' : 'text-white hover:text-gray-300 duration-200' }}">
+                        {{ session()->get('username') }} 
+                        <i class="fa fa-angle-down fa-dropdown"></i>
+                    </p>
+                    <ul role="menu" class="drop-menu">
+                        <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
+                            <a class="rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">
+                                Profile
+                            </a>
+                        </li>
+                        <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
+                            <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">
+                                Settings
+                            </a>
+                        </li>
+                        <li id="menu-item-81961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81961">
+                            <a title="Servieces" href="#" data-toggle="dropdown" data-type="title">
+                                <p class="font-inter text-lg ml-8 text-black">Add <i class="fa fa-angle-down fa-dropdown"></i></p>
+                            </a>
+                            <ul role="menu" class="drop-menu">
+                                <li id="menu-item-81966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81966">
+                                    <a title="Education/Training" href="{{ route('dashboard-post.index') }}">Image</a>
+                                </li>
+                                <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
+                                    <a title="Product Development" href="{{ route('dashboard-account.index') }}">Account</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </div>            
+                @endif
+        </div>
         
     </nav>
+    <div class="list w-full bg-gradient-to-r from-red-600 via-red-500 to-rose-800 h-4 flex justify-start" style="">
+    </div>
 </header>
 
+
 <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const listElement = document.querySelector('.list');
+    listElement.classList.add('list-off'); // Tambahkan class list-off saat halaman pertama kali dimuat
+
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
+
         if (window.scrollY > 50) {
             navbar.classList.add('navbar-shrink');
+            listElement.classList.add('list-shrink'); // Tambahkan class list-shrink saat scroll ke bawah
+            listElement.classList.remove('list-off'); // Hapus class list-off saat scroll ke bawah
         } else {
             navbar.classList.remove('navbar-shrink');
+            listElement.classList.remove('list-shrink'); // Hapus class list-shrink saat kembali ke atas
+            listElement.classList.add('list-off'); // Tambahkan class list-off saat kembali ke atas
         }
     });
+});
+
+
 
     document.addEventListener('DOMContentLoaded', function() {
         var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -250,6 +321,11 @@
                 }
             });
         });
+    });
+
+    document.querySelector('.dropdown').addEventListener('click', function(event) {
+        const menu = this.querySelector('.dropdown-menu');
+        menu.classList.toggle('hidden');
     });
 </script>
 

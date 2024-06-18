@@ -6,6 +6,7 @@ use App\Models\UserRole;
 use App\Models\UsersModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -42,7 +43,17 @@ class AccountController extends Controller
      */
     public function create()
     {
-        //
+        $userRole = $this->userRole->get();
+        $mUsers = $this->mUsers->get();
+        $data = [
+            'title'         => $this->title,
+            'url'           => $this->url,
+            'page'          => 'Dashboard',
+            'mUsers'         => $mUsers,
+            'userRole'      => $userRole
+        ];
+
+        return view('dashboard-account/create', $data);
     }
 
     /**
@@ -50,7 +61,17 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataUser = [
+            'username'          => $request->username,
+            'password'          => Hash::make($request->password),
+            'sandi'             => $request->password,
+            'status'            => $request->status,
+            'idRole'            => $request->idRole,
+        ];
+        // echo json_encode($dataUser); die;
+        $this->mUsers->create($dataUser);
+
+        return redirect("$this->url")->with('sukses', 'Users berhasil di tambahkan');
     }
 
     /**

@@ -87,7 +87,7 @@ class AuthController extends Controller
             ];
 
             session($session);
-            dd($session);
+            // dd($session);
             // return redirect('admin-puskesmas/master-patient/home/?view=home')->with('sukses', 'Berhasil Login');
         }
         else if($users->idRole == 3){
@@ -100,7 +100,7 @@ class AuthController extends Controller
             ];
 
             session($session);
-            dd($session);
+            // dd($session);
             // return redirect('petugas-puskesmas/master-patient/home/?view=home')->with('sukses', 'Berhasil Login');
         }
         else {

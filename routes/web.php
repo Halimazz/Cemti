@@ -45,7 +45,7 @@ Route::middleware(['login'])->group(function (){
 
     });
     Route::middleware(['admin'])->group(function (){
-        
+        Route::resource('/dashboard-post', DashboardPostController::class);
     });
     Route::middleware(['mitra'])->group(function (){
         
