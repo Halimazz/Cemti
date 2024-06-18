@@ -34,7 +34,7 @@ Route::get('/news', [PageController::class, 'news']);
 Route::get('login', [AuthController::class, 'login']);
 Route::post('loginProses', [AuthController:: class, 'loginProses']);
 //logout
-Route::get('logout', [AuthController::class,'logout']);
+Route::get('logout', [AuthController::class,'logout'])->name('logout');
 
 //login_auth
 Route::middleware(['login'])->group(function (){

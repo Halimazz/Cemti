@@ -265,6 +265,11 @@
                                 </li>
                             </ul>
                         </li>
+                        <li id="menu-item-81972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81972">
+                            <a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="{{ route('logout') }}">
+                                Logout
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </div>            

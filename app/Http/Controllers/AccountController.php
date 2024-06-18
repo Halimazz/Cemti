@@ -65,7 +65,7 @@ class AccountController extends Controller
             'username'          => $request->username,
             'password'          => Hash::make($request->password),
             'sandi'             => $request->password,
-            'status'            => $request->status,
+            'status'            => '0',
             'idRole'            => $request->idRole,
         ];
         // echo json_encode($dataUser); die;

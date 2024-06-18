@@ -53,17 +53,16 @@
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
                 </div>
-                <div>
-                    <label for="role" class="block text-sm font-medium text-gray-700">User Role</label>
-                    <select id="role" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" name="role" required>
-                        <option value="">Select Role</option>
-                        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="user" {{ old('role') == 'user' ? 'selected' : '' }}>User</option>
+                <div class="mb-2">
+                    <label for="idRole" class="block text-sm font-medium text-gray-700">Hak Akses</label>
+                    <select id="idRole" name="idRole" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <option value="">Pilih</option>
+                        @foreach ($userRole as $role)
+                            <option value="{{ $role->id }}">{{ $role->nama }}</option>
+                        @endforeach
                     </select>
-                    @error('role')
-                    <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                    @enderror
-                </div>
+                </div>                
                 <div>
                     <button class="w-full bg-blue-600 text-white px-3 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" type="submit">Create Account</button>
                 </div>
